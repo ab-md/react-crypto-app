@@ -16,14 +16,21 @@ const CryptoList = () => {
 
     console.log(cryptoes);
 
+    const searchHandler = event => {
+        setSearch(event.target.value);
+    }
+
+    const searchCrypto = cryptoes.cryptoData.filter(crypto => crypto.name.toLowerCase().includes(search.toLowerCase()));
+
     return (
         <div>
+            <input type='text' value={search} onChange={searchHandler} />
             {
                 cryptoes.loading ?
                     <p>loading...</p> :
                     cryptoes.error ?
                         <p>error</p> :
-                        cryptoes.cryptoData.map(crypto =>
+                        searchCrypto.map(crypto =>
                             <CryptoCard key={crypto.id} cryptoData={crypto} />
                         )
             }
