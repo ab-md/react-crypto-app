@@ -1,8 +1,9 @@
+import CryptoList from "./components/CryptoList";
 
 function App() {
   return (
     <>
-      App
+      <CryptoList />
     </>
   );
 }
