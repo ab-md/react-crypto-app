@@ -7,11 +7,8 @@ const CryptoCard = ({ cryptoData }) => {
         name,
         image, 
         current_price,
-        price_change_24h,
         price_change_percentage_24h,
         market_cap,
-        market_cap_change_24h,
-        market_cap_change_percentage_24h,
         symbol
     } = cryptoData;
 
@@ -19,8 +16,10 @@ const CryptoCard = ({ cryptoData }) => {
         <div>
             <img src={image} alt={id} style={{width: '50px'}} />
             <span>{name}</span>
-            <span>{symbol}</span>
-            <span>{current_price}</span>
+            <span>{symbol.toUpperCase()}</span>
+            <span>{current_price.toLocaleString()}</span>
+            <span>{price_change_percentage_24h}</span>
+            <span>{market_cap.toLocaleString()}</span>
         </div>
     );
 }
