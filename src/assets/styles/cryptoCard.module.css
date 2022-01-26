@@ -1,0 +1,43 @@
+.cryptoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 12px;
+    color: #212529;
+}
+
+.cryptoContainer:not(:last-child) {
+    border-bottom: 1px solid silver;
+}
+
+.cryptoContainer span {
+    text-align: left;
+}
+
+.cryptoContainer span:not(.name) {
+    width: 100px;
+}
+
+.name {
+    font-weight: 800;
+    width: 140px;
+    margin-left: 20px;
+}
+
+.cryptoImage {
+    width: 30px;
+}
+
+.greenColor {
+    color: rgb(0, 204, 0);
+}
+
+.redColor {
+    color: rgb(255, 38, 38);
+}
+
+.greenColor,
+.redColor {
+    font-weight: bold;
+}
