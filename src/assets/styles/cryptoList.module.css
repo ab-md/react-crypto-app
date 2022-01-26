@@ -32,3 +32,7 @@
     background: white;
     box-shadow: rgba(74, 74, 74, 0.24) 0px 3px 8px;
 }
+
+.loader {
+    margin-top: 100px;
+}

@@ -6,6 +6,12 @@ import CryptoCard from './CryptoCard';
 //styles
 import classes from '../assets/styles/cryptoList.module.css';
 
+//loader
+import loader from '../assets/images/Spinner.gif';
+
+//services
+import {myAlert} from '../services/alert';
+
 const CryptoList = () => {
 
     const dispatch = useDispatch();
@@ -30,9 +36,9 @@ const CryptoList = () => {
             <input className={classes.search} type='text' value={search} onChange={searchHandler} placeholder='search' />
             {
                 cryptoes.loading ?
-                    <p>loading...</p> :
+                    <img className={classes.loader} src={loader} alt='loading' /> :
                     cryptoes.error ?
-                        <p>error</p> :
+                        myAlert("Something went wrong!<br />Try later", "error") :
                         <div className={classes.items}>
                             {
                                 searchCrypto.map(crypto =>
